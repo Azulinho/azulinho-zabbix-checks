@@ -1,0 +1,6 @@
+{%  set hosts = azulinho_zabbix_checks['hosts']                        %}
+{%  for host in hosts                                                        %}
+{%          if host['hostgroup'] is defined                                       %}
+{{ host['hostgroup']}} {{ host['hostname'] }} {{  host['ip'] }}
+{%          endif                                                            %}
+{%  endfor                                                                   %}
